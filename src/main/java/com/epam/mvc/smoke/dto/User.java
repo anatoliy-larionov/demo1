@@ -3,7 +3,6 @@ package com.epam.mvc.smoke.dto;
 import com.epam.mvc.smoke.dto.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 

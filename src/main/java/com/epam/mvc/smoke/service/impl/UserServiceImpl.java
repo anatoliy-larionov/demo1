@@ -1,5 +1,6 @@
 package com.epam.mvc.smoke.service.impl;
 
+import com.epam.mvc.smoke.dto.Product;
 import com.epam.mvc.smoke.dto.User;
 import com.epam.mvc.smoke.repository.UserRepository;
 import com.epam.mvc.smoke.service.UserService;
@@ -29,6 +30,16 @@ public class UserServiceImpl implements UserService {
             return null;
         }
         return foundUser;
+    }
+
+    @Override
+    public void addProductIntoBasket(Product product) {
+        this.userRepository.addProductIntoBasket(product);
+    }
+
+    @Override
+    public void deleteProductFromBasket(Product product) {
+        this.userRepository.deleteProductFromBasket(product);
     }
 
     @Override

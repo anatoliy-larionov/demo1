@@ -28,4 +28,9 @@
         flex: auto;
         margin-left: 15px;
     }
+
+    #add-item {
+        flex: auto;
+        margin-right: 100px;
+    }
 }

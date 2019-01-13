@@ -42,7 +42,7 @@
             <input type="submit" value="Sing up">
         </div>
         <div id="url-reg">
-            <a href="authorization.jsp">Log in</a>
+            <a href="authorization">Log in</a>
         </div>
     </div>
 </form>

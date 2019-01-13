@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class AuthController {
-
     private SessionUserService sessionUserService;
     private UserService userService;
 

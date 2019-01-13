@@ -1,10 +1,9 @@
 package com.epam.mvc.smoke.repository.impl;
 
 import com.epam.mvc.smoke.data.UserData;
+import com.epam.mvc.smoke.dto.Product;
 import com.epam.mvc.smoke.dto.User;
 import com.epam.mvc.smoke.repository.UserRepository;
-import org.springframework.core.convert.ConversionFailedException;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,15 +14,21 @@ public class UserRepositoryService implements UserRepository {
 
     @Override
     public User findUserByLogin(String login) {
-        try {
             return this.userData.getUserList()
                     .stream()
                     .filter(user -> user.getLogin().equals(login))
                     .findAny()
                     .orElse(null);
-        }catch (EmptyResultDataAccessException ignored) {
-            return null;
-        }
+    }
+
+    @Override
+    public void addProductIntoBasket(Product product) {
+
+    }
+
+    @Override
+    public void deleteProductFromBasket(Product product) {
+
     }
 
     @Override

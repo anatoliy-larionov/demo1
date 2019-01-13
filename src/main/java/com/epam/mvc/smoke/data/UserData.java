@@ -9,11 +9,14 @@ import java.util.List;
 public class UserData {
     private List<User> userList = new ArrayList<>();
 
-    public List<User> getUserList() {
-        userList.add(new User("Anatolii", "Larionov", "login", "password",
+    public UserData() {
+        userList.add(new User(0, "Anatolii", "Larionov", "login", "password",
                 Role.ADMIN));
-        userList.add(new User( "Ivan", "Larionov", "login1", "password",
+        userList.add(new User(1,  "Ivan", "Larionov", "login1", "password",
                 Role.USER));
+    }
+
+    public List<User> getUserList() {
         return userList;
     }
 }
