@@ -3,12 +3,19 @@ package com.epam.mvc.smoke.repository.impl;
 import com.epam.mvc.smoke.data.CategoryData;
 import com.epam.mvc.smoke.dto.Category;
 import com.epam.mvc.smoke.repository.CategoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
 public class CategoryRepositoryImpl implements CategoryRepository {
-    private CategoryData categoryData = new CategoryData();
+
+    private final CategoryData categoryData;
+
+    @Autowired
+    public CategoryRepositoryImpl(CategoryData categoryData) {
+        this.categoryData = categoryData;
+    }
 
     @Override
     public List<Category> findAll() {
@@ -21,7 +28,7 @@ public class CategoryRepositoryImpl implements CategoryRepository {
     }
 
     @Override
-    public Category findById(long idCategory) {
+    public Category findById(int idCategory) {
         return this.categoryData.getCategoryList().stream()
                 .filter(category -> category.getId() == idCategory)
                 .findFirst()
@@ -34,13 +41,11 @@ public class CategoryRepositoryImpl implements CategoryRepository {
     }
 
     @Override
-    public void delete(long idCategory) {
-        this.categoryData.getCategoryList().stream()
+    public void delete(int idCategory) {
+        this.categoryData.getCategoryList()
+                .stream()
                 .filter(category -> category.getId() == idCategory)
                 .findFirst()
-                .map(c -> {
-                    categoryData.getCategoryList().remove(c);
-                    return c;
-                });
+                .map(c -> categoryData.getCategoryList().remove(c));
     }
 }

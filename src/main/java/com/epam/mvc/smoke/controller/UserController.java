@@ -30,13 +30,13 @@ public class UserController {
     }
 
     @PostMapping("basket/add/{productId}")
-    public void addProductIntoBasket(@PathVariable("productId") long productId) {
+    public void addProductIntoBasket(@PathVariable("productId") int productId) {
         Product product = productService.findById(productId);
         userService.addProductIntoBasket(product);
     }
 
     @PostMapping("basket/delete/{productId}")
-    public void deleteProductIntoBasket(@PathVariable("productId") long productId) {
+    public void deleteProductIntoBasket(@PathVariable("productId") int productId) {
         Product product = productService.findById(productId);
         userService.deleteProductFromBasket(product);
     }

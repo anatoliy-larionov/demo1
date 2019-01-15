@@ -7,7 +7,7 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 public class Product implements Serializable {
-    private long id;
+    private int id;
     private String name;
     private int price;
     private String description;

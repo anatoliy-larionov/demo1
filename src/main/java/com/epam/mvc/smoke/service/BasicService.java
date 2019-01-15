@@ -6,7 +6,7 @@ import java.util.List;
 public interface BasicService<T extends Serializable> {
     List<T> findAll();
     T update(T o);
-    T findById(long id);
+    T findById(int id);
     void add(T o);
-    void delete(long id);
+    void delete(int id);
 }

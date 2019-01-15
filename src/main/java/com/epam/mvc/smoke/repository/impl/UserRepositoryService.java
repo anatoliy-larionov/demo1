@@ -42,7 +42,7 @@ public class UserRepositoryService implements UserRepository {
     }
 
     @Override
-    public User findById(long id) {
+    public User findById(int id) {
         return this.userData.getUserList()
                 .stream()
                 .filter(user -> user.getId() == id)
@@ -56,14 +56,11 @@ public class UserRepositoryService implements UserRepository {
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(int id) {
         this.userData.getUserList()
                 .stream()
                 .filter(user -> user.getId() == id)
                 .findFirst()
-                .map(user -> {
-                    this.userData.getUserList().remove(user);
-                    return user;
-                });
+                .map(user -> this.userData.getUserList().remove(user));
     }
 }

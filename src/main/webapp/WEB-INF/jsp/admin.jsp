@@ -10,15 +10,17 @@
         <c:if var="users"  test="${user.role == 'ADMIN'}">
             <div id="add-item"><a href="<c:url value="/admin"/>">Добавить товар</a></div>
         </c:if>
-
+        <div><a href="/">Назад</a></div>
         <%@include file="search.jsp"%>
         <%@include file="basket.jsp"%>
+
     </header>
     <c:forEach items="${categories}" var="category">
         <div>${category.name}</div>
 
-        <a href="/">Назад</a>
-
+        <br>
+        <br>
+        <br>
     <table>
         <tr>
             <th>Название</th>
@@ -53,10 +55,7 @@
                     </td>
                 </form>
                 <td>
-                 <%--   <form:form action="admin/delete/${category.id}/${product.id}" method="post">
-                        <input id="delete-product" type="submit" value="X">
-                    </form:form>--%>
-                    <a href="admin/delete/${category.id}/${product.id}">Delete</a>
+                    <a href="admin/delete/${product.id}">Delete</a>
                 </td>
             </tr>
         </c:forEach>

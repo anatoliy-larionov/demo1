@@ -25,7 +25,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public Category findById(long idCategory) {
+    public Category findById(int idCategory) {
         return this.categoryRepository.findById(idCategory);
     }
 
@@ -35,7 +35,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public void delete(long idCategory) {
+    public void delete(int idCategory) {
         this.categoryRepository.delete(idCategory);
     }
 }

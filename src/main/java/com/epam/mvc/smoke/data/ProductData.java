@@ -1,9 +1,12 @@
 package com.epam.mvc.smoke.data;
 
 import com.epam.mvc.smoke.dto.Product;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ProductData {
     private List<Product> productList = new ArrayList<>();
 
